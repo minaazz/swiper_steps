@@ -26,5 +26,21 @@
             top:50%;
             margin-top:-250px;
         }
+
+    }
+
+    .swiper-button-next {
+        top:auto;
+        bottom:5vh; 
+        right:calc(5vw + 50px);
+        transform:scale(.5);
+        filter:grayscale(100%) brightness(300%);
+    }
+    .swiper-button-prev {
+        top:auto;
+        bottom:5vh; 
+        left:calc(5vw + 50px);
+        transform:scale(.5); 
+        filter:grayscale(100%) brightness(300%);
     }
 }
