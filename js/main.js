@@ -1,5 +1,5 @@
 
-var swiper = new Swiper("#wrap", {
+const swiper = new Swiper("#wrap", {
     navigation: {
         prevEl:".swiper-button-prev",
         nextEl:".swiper-button-next"
@@ -7,7 +7,7 @@ var swiper = new Swiper("#wrap", {
     // 페이지네이션 등록
     pagination: {
         el: ".swiper-pagination",
-        type: "bullets", //fraction(순서확인), bullets(클릭버튼)
+        type: "fraction", //fraction(순서확인), bullets(클릭버튼)
         clickable:true, //클릭가능하게 변경
     },
     loop:true, //좌우 순환 루프
@@ -23,5 +23,22 @@ var swiper = new Swiper("#wrap", {
         depth:400, //3d 요소의 왜곡률
         stretch:-100 //양수면 패널들이 당겨짐, 음수일수록 반대로 멀어짐
 
+    },
+    autoplay: {
+        delay:1000,
     }
+});
+
+const btnStart = document.querySelector(".btnStart");
+const btnStop = document.querySelector(".btnStop");
+
+btnStart.addEventListener("click",(e) => {
+    swiper.autoplay.start();
+    btnStart.classList.add("on");
+    btnStop.classList.remove("on");
+})
+btnStop.addEventListener("click", (e) => {
+    swiper.autoplay.stop();
+    btnStop.classList.add("on");
+    btnStart.classList.remove("on");
 })
